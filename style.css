@@ -1,0 +1,21 @@
+
+.board {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#goal {
+	font-size: 40px;
+}
+
+#panel {
+	display: flex;
+}
+
+#panel div {
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+}
