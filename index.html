@@ -1,17 +1,28 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="style.css">
-	<script defer src="script.js"></script>
-
+	<link rel='stylesheet' href='style.css'>
+	<script defer src='script.js'></script>
 </head>
 
-<body>
-	<div class="board">
-		<div id="goal">RGBBDF</div>
-		<div id="panel">
+<body data-side='left'>
+	<div class="container">
+		<div class="option">
+			<div id="select-left">Left</div>
+			<div id="select-right">Right</div>
 		</div>
-		<div id="levers"></div>
+		<div class="colors">
+			<div data-color=' '></div>
+			<div data-color=' '></div>
+			<div data-color=' '></div>
+			<div data-color=' '></div>
+			<div data-color=' '></div>
+			<div data-color=' '></div>
+		</div>
+		<div class="levers">
+
+		</div>
+		<div class="target"></div>
 	</div>
 </body>
 

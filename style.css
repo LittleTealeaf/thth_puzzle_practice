@@ -1,21 +1,59 @@
 
-.board {
+
+.container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-#goal {
-	font-size: 40px;
-}
-
-#panel {
+.option {
 	display: flex;
+	flex-direction: row;
 }
 
-#panel div {
-	border: 1px solid black;
-	width: 100px;
-	height: 100px;
+
+.option div {
+	padding: 10px 50px;
+	background-color: #999999;
+	cursor: pointer;
 }
+
+body[data-side='left'] #select-left,
+body[data-side='right'] #select-right {
+	background-color: #777777;
+}
+
+.colors {
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+}
+
+.colors div {
+	background-color: grey;
+	width: 40px;
+	height: 80px;
+	margin-inline: 10px;
+}
+
+.colors div[data-color='R'] {
+	background-color: #FF0000;
+}
+
+.colors div[data-color='G'] {
+	background-color: #00FF00;
+}
+
+.colors div[data-color='Y'] {
+	background-color: #FFFF00;
+}
+
+.colors div[data-color='P'] {
+	background-color: #FF00FF;
+}
+
+.colors div[data-color='B'] {
+	background-color: #00FF00;
+}
+
