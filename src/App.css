@@ -1,0 +1,28 @@
+
+.signalCrystals {
+	display: flex;
+	flex-direction: row;
+}
+
+.signal {
+	width: 60px;
+	height: 100px;
+	background-color: grey;
+	margin-inline: 5px;
+}
+
+.signal[data-value="1"] {
+	background-color: #FF0000;
+}
+.signal[data-value="2"] {
+	background-color: #00FF00;
+}
+.signal[data-value="3"] {
+	background-color: #FFFF00;
+}
+.signal[data-value="4"] {
+	background-color: #FF00FF;
+}
+.signal[data-value="5"] {
+	background-color: #0000FF;
+}
