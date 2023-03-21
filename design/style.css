@@ -1,0 +1,82 @@
+html {
+	background-color: grey;
+}
+
+.container {
+	background-color: black;
+	width: fit-content;
+	margin: auto;
+}
+
+.signet-container {
+	display: flex;
+	flex-direction: row;
+	padding: 20px;
+	margin: auto;
+	width: fit-content;
+}
+
+.signet {
+	--color: darkgrey;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-bottom: 35px solid var(--color);
+	position: relative;
+	top: -25px;
+	margin: 5px;
+}
+
+.signet:after {
+	content: '';
+	position: absolute;
+	left: -25px;
+	top: 35px;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-top: 35px solid var(--color);
+}
+
+.signet[data-value="1"] {
+	--color: green;
+}
+
+.signet[data-value="2"] {
+	--color: blue;
+}
+
+.signet[data-value="3"] {
+	--color: yellow;
+}
+
+.signet[data-value="4"] {
+	--color: red;
+}
+
+.signet[data-value="5"] {
+	--color: purple;
+}
+
+.lever-container {
+	display: flex;
+	flex-direction: row;
+	width: fit-content;
+	margin: auto;
+}
+
+.lever-group {
+	margin: 5px;
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+}
+
+.lever {
+	background-color: grey;
+	margin: 5px;
+	width: 50px;
+	height: 70px;
+}
+
+/* Green blue yellow red purple */
