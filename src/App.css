@@ -1,28 +1,107 @@
+html {
+	background-color: grey;
+}
 
-.signalCrystals {
+
+.options {
+	width: fit-content;
+	font-weight: 50em;
+	margin: auto;
+	padding: 10px;
+	display: flex;
+}
+
+.options * {
+	margin-inline: 15px;
+	padding: 10px;
+	padding-inline: 30px;
+	background-color: grey;
+	cursor: pointer;
+	transform: translateY(0);
+}
+
+.options .selected {
+	background-color: darkgrey;
+	color: black;
+}
+
+
+.puzzle {
+	width: fit-content;
+	/* outline: 1px solid red; */
+	margin: auto;
+}
+
+.signets {
+	display: flex;
+	padding-bottom: 10px;
+	background-color: black;
+	margin: auto;
+	max-width: fit-content;
+}
+
+.signet {
+	--color: darkgrey;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-bottom: 35px solid var(--color);
+	position: relative;
+	top: -25px;
+	margin: 5px;
+}
+
+.signet:after {
+	content: '';
+	position: absolute;
+	left: -25px;
+	top: 35px;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-top: 35px solid var(--color);
+}
+
+.signet[data-value="0"] {
+	--color: green;
+}
+
+.signet[data-value="1"] {
+	--color: blue;
+}
+
+.signet[data-value="2"] {
+	--color: yellow;
+}
+
+.signet[data-value="3"] {
+	--color: red;
+}
+
+.signet[data-value="4"] {
+	--color: purple;
+}
+/* Green blue yellow red purple */ 
+
+.levers {
 	display: flex;
 	flex-direction: row;
+	max-width: 700px;
+	margin: auto;
+	background-color: darkslategrey;
+	padding: 10px;
 }
 
-.signal {
-	width: 60px;
-	height: 100px;
-	background-color: grey;
+.lever-group {
+	display: flex;
+	flex-direction: row;
+	margin-inline: auto;
+}
+
+.lever {
 	margin-inline: 5px;
-}
-
-.signal[data-value="1"] {
-	background-color: #FF0000;
-}
-.signal[data-value="2"] {
-	background-color: #00FF00;
-}
-.signal[data-value="3"] {
-	background-color: #FFFF00;
-}
-.signal[data-value="4"] {
-	background-color: #FF00FF;
-}
-.signal[data-value="5"] {
-	background-color: #0000FF;
+	width: 40px;
+	height: 75px;
+	background-color: darkgrey;
+	cursor: pointer;
 }
