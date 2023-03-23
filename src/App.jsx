@@ -15,10 +15,17 @@ function getPuzzlePrint(puzzle) {
 }
 
 
+function arrayEquals(a,b) {
+	return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((val, index) => val == b[index]);
+}
+
+
 function Puzzle({ is_right = true }) {
 	let [state, setState] = useState([-1, -1, -1, -1, -1, -1]);
 	let [goal, setGoal] = useState([0, 0, 0, 0, 0, 0]);
 
+
+	let solved = arrayEquals(state, goal);
 
 	useEffect(() => {
 		setGoal(createPuzzle());
@@ -38,7 +45,7 @@ function Puzzle({ is_right = true }) {
 			<div className="signets">
 				{state.map((state) => <div className="signet" data-value={state}></div>)}
 			</div>
-			<div className="levers">
+			<div className="levers" data-solved={solved}>
 				<div className="lever-group">
 					<div className="lever" onClick={pull_lever(0)} />
 					<div className="lever" onClick={pull_lever(1)} />

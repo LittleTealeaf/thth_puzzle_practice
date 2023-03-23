@@ -88,7 +88,7 @@ html {
 	flex-direction: row;
 	max-width: 700px;
 	margin: auto;
-	background-color: darkslategrey;
+	background-color: black;
 	padding: 10px;
 }
 
@@ -104,6 +104,11 @@ html {
 	height: 75px;
 	background-color: darkgrey;
 	cursor: pointer;
+}
+
+
+.levers[data-solved="true"] {
+	background-color: green;
 }
 
 
