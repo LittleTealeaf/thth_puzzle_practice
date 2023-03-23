@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thth_puzzle_practice/static/css/main.9324e7a5.css",
+    "main.js": "/thth_puzzle_practice/static/js/main.405af1d1.js",
+    "static/js/787.195506ee.chunk.js": "/thth_puzzle_practice/static/js/787.195506ee.chunk.js",
+    "index.html": "/thth_puzzle_practice/index.html",
+    "main.9324e7a5.css.map": "/thth_puzzle_practice/static/css/main.9324e7a5.css.map",
+    "main.405af1d1.js.map": "/thth_puzzle_practice/static/js/main.405af1d1.js.map",
+    "787.195506ee.chunk.js.map": "/thth_puzzle_practice/static/js/787.195506ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9324e7a5.css",
+    "static/js/main.405af1d1.js"
+  ]
+}
