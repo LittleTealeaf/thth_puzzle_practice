@@ -1,12 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-
 
 const ORDER_RIGHT = [1, 4, 0, 5, 3, 2];
 const ORDER_LEFT = [3, 2, 0, 5, 1, 4];
 
+const COLOR_NAME = ['G', 'B', 'Y', 'R', 'P'];
+
+function createPuzzle() {
+	return [0, 0, 0, 0, 0, 0].map((_) => Math.floor(Math.random() * 4));
+}
+
+function getPuzzlePrint(puzzle) {
+	return puzzle.map((i) => COLOR_NAME[i])
+}
+
+
 function Puzzle({ is_right = true }) {
 	let [state, setState] = useState([-1, -1, -1, -1, -1, -1]);
+	let [goal, setGoal] = useState([0, 0, 0, 0, 0, 0]);
+
+
+	useEffect(() => {
+		setGoal(createPuzzle());
+	}, []);
 
 	const order = is_right ? ORDER_RIGHT : ORDER_LEFT;
 
@@ -37,18 +53,17 @@ function Puzzle({ is_right = true }) {
 				</div>
 			</div>
 			<div className="target">
-
+				{getPuzzlePrint(goal)}
+			</div>
+			<div className="generate" onClick={() => {
+				setGoal(createPuzzle())
+				setState([-1, -1, -1, -1, -1, -1])
+			}}>
+				Generate New Puzzle
 			</div>
 		</div>
 	)
 }
-
-
-
-
-
-
-
 
 function App() {
 
@@ -58,11 +73,11 @@ function App() {
 	return (
 		<>
 			<div className="options">
-				<div className={!is_right && "selected"}>
+				<div className={!is_right && "selected"} onClick={() => setRight(false)}>
 					Left
 				</div>
-				<div className={is_right && "selected"}>
-		Right
+				<div className={is_right && "selected"} onClick={() => setRight(true)}>
+					Right
 				</div>
 			</div>
 			<Puzzle is_right={is_right} />

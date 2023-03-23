@@ -105,3 +105,22 @@ html {
 	background-color: darkgrey;
 	cursor: pointer;
 }
+
+
+.generate {
+	margin: auto;
+	width: fit-content;
+	font-size: 25px;
+	background-color: darkgrey;
+	border-radius: 12px;
+	margin-top: 10px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.target {
+	margin: auto;
+	font-size: 25px;
+	width: fit-content;
+	padding: 20px;
+}
