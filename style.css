@@ -4,10 +4,16 @@ html {
 	padding: 0;
 }
 
+.puzzle {
+	width: fit-content;
+	background-color: pink;
+	margin: auto;
+	padding: 25px;
+}
+
 .lights {
 	display: flex;
 	scale: 0.7 1;
-	margin: auto;
 	width: fit-content;
 }
 
@@ -15,8 +21,8 @@ html {
 	display: block;
 	margin: 40px;
 	transform: rotate(45deg);
-	width: 150px;
-	height: 150px;
+	width: 125px;
+	height: 125px;
 	background-color: var(--color);
 	--color: darkgrey;
 }
