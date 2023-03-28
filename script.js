@@ -14,8 +14,6 @@ function pullLever(index) {
 	console.log(index)
 }
 
-
-
 {
 	const levers = document.querySelector(".levers");
 	var index = 0;
@@ -28,7 +26,7 @@ function pullLever(index) {
 			lever.classList.add("lever");
 			const ind = index++;
 			lever.addEventListener("click", () => pullLever(ind));
-			group.append(lever)
+			group.append(lever);
 		}
 
 		levers.append(group);
