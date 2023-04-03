@@ -35,7 +35,6 @@ function pullLever(index) {
 			lever.addEventListener("click", () => pullLever(ind));
 			group.append(lever);
 		}
-
 		levers.append(group);
 	}
 }
