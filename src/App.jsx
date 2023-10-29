@@ -1,29 +1,31 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
 
 const ORDER_RIGHT = [1, 4, 0, 5, 3, 2];
 const ORDER_LEFT = [3, 2, 0, 5, 1, 4];
 
-const COLOR_NAME = ['G', 'B', 'Y', 'R', 'P'];
+const COLOR_NAME = ["G", "B", "Y", "R", "P"];
 
 function createPuzzle() {
 	return [0, 0, 0, 0, 0, 0].map((_) => Math.floor(Math.random() * 4));
 }
 
 function getPuzzlePrint(puzzle) {
-	return puzzle.map((i) => COLOR_NAME[i])
+	return puzzle.map((i) => COLOR_NAME[i]);
 }
 
-
-function arrayEquals(a,b) {
-	return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((val, index) => val == b[index]);
+function arrayEquals(a, b) {
+	return (
+		Array.isArray(a) &&
+		Array.isArray(b) &&
+		a.length === b.length &&
+		a.every((val, index) => val == b[index])
+	);
 }
-
 
 function Puzzle({ is_right = true }) {
 	let [state, setState] = useState([-1, -1, -1, -1, -1, -1]);
 	let [goal, setGoal] = useState([0, 0, 0, 0, 0, 0]);
-
 
 	let solved = arrayEquals(state, goal);
 
@@ -36,14 +38,16 @@ function Puzzle({ is_right = true }) {
 	function pull_lever(index) {
 		const destination = order[index];
 		return () => {
-			setState(state.map((v, i) => i == destination ? (v + 1) % 5 : v));
-		}
+			setState(state.map((v, i) => (i == destination ? (v + 1) % 5 : v)));
+		};
 	}
 
 	return (
 		<div className="puzzle">
 			<div className="signets">
-				{state.map((state) => <div className="signet" data-value={state}></div>)}
+				{state.map((state) => (
+					<div className="signet" data-value={state}></div>
+				))}
 			</div>
 			<div className="levers" data-solved={solved}>
 				<div className="lever-group">
@@ -59,28 +63,30 @@ function Puzzle({ is_right = true }) {
 					<div className="lever" onClick={pull_lever(5)} />
 				</div>
 			</div>
-			<div className="target">
-				{getPuzzlePrint(goal)}
-			</div>
-			<div className="generate" onClick={() => {
-				setGoal(createPuzzle())
-				setState([-1, -1, -1, -1, -1, -1])
-			}}>
+			<div className="target">{getPuzzlePrint(goal)}</div>
+			<div
+				className="generate"
+				onClick={() => {
+					setGoal(createPuzzle());
+					setState([-1, -1, -1, -1, -1, -1]);
+				}}
+			>
 				Generate New Puzzle
 			</div>
 		</div>
-	)
+	);
 }
 
 function App() {
-
-	let [is_right, setRight] = useState(true)
-
+	let [is_right, setRight] = useState(true);
 
 	return (
 		<>
 			<div className="options">
-				<div className={!is_right && "selected"} onClick={() => setRight(false)}>
+				<div
+					className={!is_right && "selected"}
+					onClick={() => setRight(false)}
+				>
 					Left
 				</div>
 				<div className={is_right && "selected"} onClick={() => setRight(true)}>
